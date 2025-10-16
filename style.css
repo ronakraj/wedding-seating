@@ -1,0 +1,126 @@
+:root {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --text: #1c1c1e;
+  --muted: #6b7280;
+  --accent: #7c3aed;
+  --accent-contrast: #ffffff;
+  --success: #065f46;
+  --warn: #92400e;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+  color: var(--text);
+  background: radial-gradient(60% 60% at 50% 0%, #f0e9ff 0%, var(--bg) 60%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 12px 0 4px;
+}
+
+.sub {
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.status {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 8px 0 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
+  margin: 12px 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled, input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#result .card.success {
+  border-left: 6px solid #34d399;
+}
+
+#result .card.warn {
+  border-left: 6px solid #fbbf24;
+}
+
+#result h2 {
+  margin: 0 0 8px;
+}
+
+.note {
+  color: var(--muted);
+}
+
+.suggestions-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.suggestion {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.muted { color: var(--muted); font-size: 0.9rem; }

@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Alice Johnson",
+    "table": "Table 1",
+    "seat": 3,
+    "note": "Bride's friend from college"
+  },
+  {
+    "name": "Benjamin Lee",
+    "table": "Table 2",
+    "seat": 7
+  },
+  {
+    "name": "Carla Gómez",
+    "aliases": ["Carla Gomez"],
+    "table": "Table 5",
+    "seat": 2,
+    "note": "Family"
+  },
+  {
+    "name": "Daniel O’Connor",
+    "aliases": ["Daniel O'Connor", "Dan OConnor", "Dan O’Connor"],
+    "table": "Table 3",
+    "seat": 1
+  },
+  {
+    "name": "Emily Chen",
+    "table": "Table 4"
+  },
+  {
+    "name": "Frank Müller",
+    "aliases": ["Frank Muller"],
+    "table": "Table 6",
+    "seat": 8
+  }
+]
