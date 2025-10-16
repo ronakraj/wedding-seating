@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, passcode: SHARED_PASSCODE || undefined }),
+        body: JSON.stringify({ name: name, passcode: SHARED_PASSCODE || undefined }),
       });
 
       if (res.status === 404) {
