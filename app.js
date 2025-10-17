@@ -22,6 +22,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const suggestions = document.getElementById('suggestions');
   const status = document.getElementById('status');
 
+  // Fetch all names/aliases for suggestions
+  let allNames = [];
+  async function fetchNames() {
+    try {
+      const res = await fetch(API_URL, { method: 'GET' });
+      if (res.ok) {
+        const data = await res.json();
+        allNames = data.names || [];
+      }
+    } catch (err) {
+      console.error('Failed to fetch names:', err);
+    }
+  }
+  fetchNames();
+
+  // Show suggestions as user types
+  input.addEventListener('input', () => {
+    const query = normalize(input.value);
+    suggestions.innerHTML = '';
+    if (!query || allNames.length === 0) return;
+    const matches = allNames.filter(n => normalize(n).includes(query));
+    matches.slice(0, 8).forEach(name => {
+      const div = document.createElement('div');
+      div.className = 'suggestion';
+      div.textContent = name;
+      div.onclick = () => {
+        input.value = name;
+        suggestions.innerHTML = '';
+      };
+      suggestions.appendChild(div);
+    });
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     suggestions.innerHTML = '';
