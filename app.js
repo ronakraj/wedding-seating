@@ -1,5 +1,5 @@
 // Set this to your deployed API endpoint (e.g., from Vercel)
-const API_URL = 'https://wedding-seating-api.vercel.app/api/lookup';
+const API_URL = 'https://wedding-seating-api-neaq.vercel.app/api/lookup';
 // Optional: if you add a shared passcode on the API, put it here and on signage
 const SHARED_PASSCODE = ''; // e.g., 'wedding2025'
 
