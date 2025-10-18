@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3> We are delighted you are here. </h3>
           <p>Your seat: <strong>${escapeHtml(entry.table || 'TBD')}</strong>${seatText}</p>
           ${entry.note ? `<p class="note">${escapeHtml(entry.note)}</p>` : ''}
-          <p><em>Much love, Kira and Ronakraj</em></p>
+          <p><em>Much love, Kira and Ronakraj (Kiraj)</em></p>
         </div>
       `;
     } catch (err) {
