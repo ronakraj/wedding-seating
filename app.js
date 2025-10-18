@@ -1,7 +1,7 @@
 // Set this to your deployed API endpoint (e.g., from Vercel)
 const API_URL = 'https://wedding-seating-api-neaq.vercel.app/api/lookup';
 // Optional: if you add a shared passcode on the API, put it here and on signage
-const SHARED_PASSCODE = ''; // e.g., 'wedding2025'
+const SHARED_PASSCODE = 'kiraj2025'; // e.g., 'wedding2025'
 
 const normalize = (s) =>
   String(s || '')
@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       result.innerHTML = `
         <div class="card success">
           <h2>Welcome, ${escapeHtml(entry.name)}!</h2>
+          <h3> We are delighted you are here. </h3>
           <p>Your seat: <strong>${escapeHtml(entry.table || 'TBD')}</strong>${seatText}</p>
           ${entry.note ? `<p class="note">${escapeHtml(entry.note)}</p>` : ''}
         </div>
