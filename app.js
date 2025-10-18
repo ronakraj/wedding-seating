@@ -95,10 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
       result.innerHTML = `
         <div class="card success">
           <h2>Welcome, ${escapeHtml(entry.name)}!</h2>
-          <h3> We are delighted you are here. </h3>
           <p>Your seat: <strong>${escapeHtml(entry.table || 'TBD')}</strong>${seatText}</p>
-          ${entry.note ? `<p class="note">${escapeHtml(entry.note)}</p>` : ''}
-          <p><em>Much love, Kira and Ronakraj (Kiraj)</em></p>
+          ${entry.note ? `<p class="note"><em>${escapeHtml(entry.note)}</em></p>` : ''}
+          <p class="note"><em>Much love, Kira and Ronakraj (Kiraj)</em></p>
         </div>
       `;
     } catch (err) {
