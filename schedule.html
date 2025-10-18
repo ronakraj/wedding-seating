@@ -1,3 +1,16 @@
+    .event {
+      opacity: 0.5;
+      filter: grayscale(0.2);
+      transition: opacity 0.3s, filter 0.3s, background 0.2s;
+    }
+    .event.now {
+      opacity: 1;
+      filter: none;
+      background: #fffbe6;
+      border-left: 4px solid #f59e42;
+      box-shadow: 0 4px 16px rgba(245,158,66,0.10);
+      z-index: 2;
+    }
   <style>
     .now-marker {
       position: absolute;
@@ -184,7 +197,7 @@
       });
 
       // Now indicator logic
-      function updateNowIndicator() {
+      function updateNowIndicator(scrollToNow = false) {
         // Remove previous now class and marker
         events.forEach(ev => {
           ev.classList.remove('now');
@@ -216,10 +229,15 @@
           marker.className = 'now-marker';
           marker.innerHTML = '<span class="now-dot">🕒</span><span class="now-label">Now</span>';
           events[nowIdx].prepend(marker);
+          if (scrollToNow) {
+            setTimeout(() => {
+              events[nowIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }
         }
       }
-      updateNowIndicator();
-      setInterval(updateNowIndicator, 60 * 1000); // update every minute
+      updateNowIndicator(true); // scroll on first load
+      setInterval(() => updateNowIndicator(false), 60 * 1000); // update every minute
     });
   </script>
     </div>
