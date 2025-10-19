@@ -70,16 +70,6 @@
         80% { opacity: 0.7; }
         100% { transform: translateY(110vh) scale(1.1); opacity: 0; }
       }
-      /* Elegant floral garland */
-      .floral-garland {
-        position: absolute;
-        top: 0; left: 50%;
-        transform: translateX(-50%);
-        width: 420px;
-        height: 60px;
-        z-index: 2;
-        pointer-events: none;
-      }
       body {
         background: linear-gradient(135deg, #e6f4ea 0%, #f7f5e6 100%);
         min-height: 100vh;
@@ -234,28 +224,13 @@
         display: block;
         margin: 40px auto 32px auto;
         padding: 14px 32px;
-        background: var(--accent, #34d399);
-        color: #fff;
-        font-weight: 600;
-        font-size: 1.1rem;
-        border-radius: 8px;
-        text-decoration: none;
-        box-shadow: 0 2px 8px rgba(124,58,237,0.08);
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-        text-align: center;
-        max-width: 320px;
-      }
-      .return-btn {
-        display: block;
-        margin: 40px auto 32px auto;
-        padding: 14px 32px;
         background: var(--accent, #34a853);
         color: #fff;
         font-weight: 600;
         font-size: 1.1rem;
         border-radius: 8px;
         text-decoration: none;
-        box-shadow: 0 2px 8px rgba(52,168,83,0.08);
+        box-shadow: 0 2px 8px rgba(52,168,83,0.10);
         transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         text-align: center;
         max-width: 320px;
@@ -263,74 +238,78 @@
       .return-btn:hover {
         background: #81c995;
         color: #fff;
-        box-shadow: 0 4px 16px rgba(52,168,83,0.12);
-      }
-    .event {
-      position: relative;
-      background: var(--card, #fff);
-      margin-bottom: 32px;
-      padding: 16px 24px 16px 64px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(16,24,40,0.04);
-      transition: opacity 0.3s, filter 0.3s, background 0.2s;
-      cursor: pointer;
-      z-index: 1;
-    }
-    .event.selected {
-      background: #f3f0ff;
-      box-shadow: 0 4px 16px rgba(124,58,237,0.10);
-      border-left: 4px solid var(--accent, #34d399);
-    }
-    .event-dot {
-      position: absolute;
-      left: 16px;
-      top: 24px;
-      width: 32px;
-      height: 32px;
-      background: #fff;
-      border: 4px solid var(--accent, #34d399);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      z-index: 2;
-      box-shadow: 0 1px 4px rgba(124,58,237,0.08);
-      transition: border 0.2s;
-    }
-    .event.selected .event-dot {
-      border: 4px solid #a6d0c1;
-    }
-    .event-time {
-      font-weight: bold;
-      color: var(--accent, #34d399);
-      margin-bottom: 4px;
-    }
-    .event-title {
-      font-size: 1.2rem;
-      margin-bottom: 4px;
-    }
-    .event-desc {
-      color: var(--muted, #6b7280);
-      font-size: 1rem;
-    }
-    @media (max-width: 600px) {
-      .timeline {
-        padding: 0 2px;
+        box-shadow: 0 4px 16px rgba(52,168,83,0.18);
       }
       .event {
-        padding-left: 56px;
+        position: relative;
+        background: var(--card, #fff);
+        margin-bottom: 32px;
+        padding: 16px 24px 16px 64px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(16,24,40,0.04);
+        transition: opacity 0.3s, filter 0.3s, background 0.2s;
+        cursor: pointer;
+        z-index: 1;
+      }
+      .event.selected {
+        background: #e6f4ea;
+        box-shadow: 0 4px 16px rgba(52,168,83,0.18);
+        border-left: 4px solid var(--accent, #34a853);
       }
       .event-dot {
-        left: 8px;
-        width: 24px;
-        height: 24px;
+        position: absolute;
+        left: 16px;
+        top: 24px;
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        border: 4px solid var(--accent, #34a853);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        z-index: 2;
+        box-shadow: 0 1px 4px rgba(52,168,83,0.12);
+        transition: border 0.2s;
+      }
+      .event.selected .event-dot {
+        border: 4px solid #81c995;
+      }
+      .event-time {
+        font-weight: bold;
+        color: var(--accent, #34a853);
+        margin-bottom: 4px;
+      }
+      .event-title {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+      .event-desc {
+        color: var(--muted, #6b7280);
         font-size: 1rem;
       }
-    }
+      @media (max-width: 600px) {
+        .timeline {
+          padding: 0 2px;
+        }
+        .event {
+          padding-left: 56px;
+        }
+        .event-dot {
+          left: 8px;
+          width: 24px;
+          height: 24px;
+          font-size: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- Always-visible Now button -->
+    <button id="now-btn" style="position:fixed;bottom:32px;right:32px;z-index:20;background:#34a853;color:#fff;font-family:'Lora',serif;font-size:1.1rem;padding:12px 24px;border:none;border-radius:32px;box-shadow:0 2px 8px rgba(52,168,83,0.18);cursor:pointer;transition:background 0.2s;">
+      <span style="font-size:1.3rem;vertical-align:middle;">🕒</span> Now
+    </button>
     <!-- Festive confetti (single instance, correct stacking) -->
     <div class="confetti">
       <div class="confetti-dot" style="left:5vw;top:0vh;width:12px;height:12px;background:#ffd700;animation-delay:0s;"></div>
@@ -344,64 +323,21 @@
       <div class="confetti-dot" style="left:85vw;top:0vh;width:12px;height:12px;background:#ffe4b5;animation-delay:2.2s;"></div>
       <div class="confetti-dot" style="left:95vw;top:0vh;width:9px;height:9px;background:#ffd700;animation-delay:1.7s;"></div>
     </div>
-    <!-- Elegant floral garland (single instance, correct stacking) -->
+    <!-- Elegant floral garland: roses and leaves (single instance, correct stacking) -->
     <svg class="floral-garland" viewBox="0 0 420 60">
-      <path d="M10,40 Q60,10 110,40 Q160,70 210,40 Q260,10 310,40 Q360,70 410,40" stroke="#b7e2c6" stroke-width="4" fill="none"/>
-      <ellipse cx="60" cy="20" rx="12" ry="6" fill="#f7cac9"/>
-      <ellipse cx="110" cy="40" rx="10" ry="5" fill="#fff8dc"/>
-      <ellipse cx="160" cy="60" rx="8" ry="4" fill="#ffe4b5"/>
-      <ellipse cx="210" cy="40" rx="12" ry="6" fill="#f7cac9"/>
-      <ellipse cx="260" cy="20" rx="10" ry="5" fill="#fff8dc"/>
-      <ellipse cx="310" cy="40" rx="8" ry="4" fill="#ffe4b5"/>
-      <ellipse cx="360" cy="60" rx="12" ry="6" fill="#f7cac9"/>
-    </svg>
-    <!-- Festive confetti -->
-    <div class="confetti">
-      <div class="confetti-dot" style="left:5vw;top:0vh;width:12px;height:12px;background:#ffd700;animation-delay:0s;"></div>
-      <div class="confetti-dot" style="left:15vw;top:0vh;width:8px;height:8px;background:#fff8dc;animation-delay:1s;"></div>
-      <div class="confetti-dot" style="left:25vw;top:0vh;width:10px;height:10px;background:#ffe4b5;animation-delay:2s;"></div>
-      <div class="confetti-dot" style="left:35vw;top:0vh;width:14px;height:14px;background:#ffd700;animation-delay:1.5s;"></div>
-      <div class="confetti-dot" style="left:45vw;top:0vh;width:9px;height:9px;background:#fff8dc;animation-delay:0.5s;"></div>
-      <div class="confetti-dot" style="left:55vw;top:0vh;width:11px;height:11px;background:#ffe4b5;animation-delay:2.5s;"></div>
-      <div class="confetti-dot" style="left:65vw;top:0vh;width:13px;height:13px;background:#ffd700;animation-delay:1.2s;"></div>
-      <div class="confetti-dot" style="left:75vw;top:0vh;width:10px;height:10px;background:#fff8dc;animation-delay:0.8s;"></div>
-      <div class="confetti-dot" style="left:85vw;top:0vh;width:12px;height:12px;background:#ffe4b5;animation-delay:2.2s;"></div>
-      <div class="confetti-dot" style="left:95vw;top:0vh;width:9px;height:9px;background:#ffd700;animation-delay:1.7s;"></div>
-    </div>
-    <!-- Elegant floral garland -->
-    <svg class="floral-garland" viewBox="0 0 420 60">
-      <path d="M10,40 Q60,10 110,40 Q160,70 210,40 Q260,10 310,40 Q360,70 410,40" stroke="#b7e2c6" stroke-width="4" fill="none"/>
-      <ellipse cx="60" cy="20" rx="12" ry="6" fill="#f7cac9"/>
-      <ellipse cx="110" cy="40" rx="10" ry="5" fill="#fff8dc"/>
-      <ellipse cx="160" cy="60" rx="8" ry="4" fill="#ffe4b5"/>
-      <ellipse cx="210" cy="40" rx="12" ry="6" fill="#f7cac9"/>
-      <ellipse cx="260" cy="20" rx="10" ry="5" fill="#fff8dc"/>
-      <ellipse cx="310" cy="40" rx="8" ry="4" fill="#ffe4b5"/>
-      <ellipse cx="360" cy="60" rx="12" ry="6" fill="#f7cac9"/>
-    </svg>
-    <!-- Festive confetti -->
-    <div class="confetti">
-      <div class="confetti-dot" style="left:5vw;top:0vh;width:12px;height:12px;background:#ffd700;animation-delay:0s;"></div>
-      <div class="confetti-dot" style="left:15vw;top:0vh;width:8px;height:8px;background:#fff8dc;animation-delay:1s;"></div>
-      <div class="confetti-dot" style="left:25vw;top:0vh;width:10px;height:10px;background:#ffe4b5;animation-delay:2s;"></div>
-      <div class="confetti-dot" style="left:35vw;top:0vh;width:14px;height:14px;background:#ffd700;animation-delay:1.5s;"></div>
-      <div class="confetti-dot" style="left:45vw;top:0vh;width:9px;height:9px;background:#fff8dc;animation-delay:0.5s;"></div>
-      <div class="confetti-dot" style="left:55vw;top:0vh;width:11px;height:11px;background:#ffe4b5;animation-delay:2.5s;"></div>
-      <div class="confetti-dot" style="left:65vw;top:0vh;width:13px;height:13px;background:#ffd700;animation-delay:1.2s;"></div>
-      <div class="confetti-dot" style="left:75vw;top:0vh;width:10px;height:10px;background:#fff8dc;animation-delay:0.8s;"></div>
-      <div class="confetti-dot" style="left:85vw;top:0vh;width:12px;height:12px;background:#ffe4b5;animation-delay:2.2s;"></div>
-      <div class="confetti-dot" style="left:95vw;top:0vh;width:9px;height:9px;background:#ffd700;animation-delay:1.7s;"></div>
-    </div>
-    <!-- Elegant floral garland -->
-    <svg class="floral-garland" viewBox="0 0 420 60">
-      <path d="M10,40 Q60,10 110,40 Q160,70 210,40 Q260,10 310,40 Q360,70 410,40" stroke="#b7e2c6" stroke-width="4" fill="none"/>
-      <ellipse cx="60" cy="20" rx="12" ry="6" fill="#f7cac9"/>
-      <ellipse cx="110" cy="40" rx="10" ry="5" fill="#fff8dc"/>
-      <ellipse cx="160" cy="60" rx="8" ry="4" fill="#ffe4b5"/>
-      <ellipse cx="210" cy="40" rx="12" ry="6" fill="#f7cac9"/>
-      <ellipse cx="260" cy="20" rx="10" ry="5" fill="#fff8dc"/>
-      <ellipse cx="310" cy="40" rx="8" ry="4" fill="#ffe4b5"/>
-      <ellipse cx="360" cy="60" rx="12" ry="6" fill="#f7cac9"/>
+      <!-- Garland vine -->
+      <path d="M20,50 Q80,10 210,30 Q340,10 400,50" stroke="#7cbf7b" stroke-width="4" fill="none"/>
+      <!-- Roses -->
+      <circle cx="80" cy="20" r="10" fill="#e57399"/>
+      <circle cx="210" cy="30" r="12" fill="#e57399"/>
+      <circle cx="340" cy="20" r="10" fill="#e57399"/>
+      <!-- Leaves -->
+      <ellipse cx="60" cy="30" rx="8" ry="4" fill="#b7e2c6"/>
+      <ellipse cx="100" cy="15" rx="7" ry="3" fill="#b7e2c6"/>
+      <ellipse cx="190" cy="40" rx="8" ry="4" fill="#b7e2c6"/>
+      <ellipse cx="230" cy="20" rx="7" ry="3" fill="#b7e2c6"/>
+      <ellipse cx="320" cy="35" rx="8" ry="4" fill="#b7e2c6"/>
+      <ellipse cx="360" cy="15" rx="7" ry="3" fill="#b7e2c6"/>
     </svg>
     <div class="botanical-bg">
       <svg class="botanical-leaf leaf1" viewBox="0 0 64 64"><path d="M32 2 Q52 22 32 62 Q12 22 32 2 Z" fill="#7cbf7b"/></svg>
@@ -416,24 +352,75 @@
   <div class="container">
     <h1>Kiraj's Wedding Day Schedule</h1>
     <div class="timeline" id="timeline">
-      <div class="event"><div class="event-dot">👋</div><div class="event-time">2:30 PM</div><div class="event-title">Guests all arrival at Hillstone</div><div class="event-desc">Welcome! Join us at the Mango Tree Terrace and start your day with smiles and excitement.</div></div>
-      <div class="event"><div class="event-dot">🚌</div><div class="event-time">2:30 PM</div><div class="event-title">Kira, Ronakraj & Family arrive</div><div class="event-desc">Wave hello as the happy couple makes their grand entrance!</div></div>
+      <div class="event">
+          <div class="event-dot">💐👰</div>
+        <div class="event-time">2:30 PM</div>
+        <div class="event-title">Guest Arrivals & Grand Entrance</div>
+        <div class="event-desc">
+          Welcome to Hillstone! Join us at the Mango Tree Terrace to start your day with smiles and excitement as all guests arrive.<br>
+          At the same time, Kira, Ronakraj & Family make their grand entrance—wave hello and share in the joy as the celebrations begin.
+        </div>
+      </div>
       <div class="event"><div class="event-dot">🤝</div><div class="event-time">2:45 PM</div><div class="event-title">Ronakraj welcomed into the Grandview Room by Karin & Family</div><div class="event-desc">Bride's side, please make your way inside, and groom's side please enter with the Groom and his family.</div></div>
       <div class="event"><div class="event-dot">💍</div><div class="event-time">3:00 PM</div><div class="event-title">Hindu Ceremony Commences</div><div class="event-desc">All guests please find a seat in front of the Mandap to witness the sacred rituals.</div></div>
-      <div class="event"><div class="event-dot">🍸</div><div class="event-time">4:30 PM</div><div class="event-title">Guests invited outside to Mango Tree Terrace for cocktail hour</div><div class="event-desc">Relax and mingle with friends and family.</div></div>
-      <div class="event"><div class="event-dot">📸</div><div class="event-time">4:30 PM</div><div class="event-title">Congratulations, group and family photos</div><div class="event-desc">Capture memories with group and family photos—don’t forget to get a picture with the married couple!</div></div>
-      <div class="event"><div class="event-dot">🍵</div><div class="event-time">4:30 PM</div><div class="event-title">Chai Station commences</div><div class="event-desc">Warm up with a delicious cup of chai, freshly prepared for you.</div></div>
-      <div class="event"><div class="event-dot">🥟</div><div class="event-time">4:30 PM</div><div class="event-title">Canapés commence</div><div class="event-desc">Enjoy a variety of tasty canapés as you mingle and celebrate.</div></div>
-      <div class="event"><div class="event-dot">🍹</div><div class="event-time">4:30 PM</div><div class="event-title">Bar Tab open</div><div class="event-desc">Raise a glass! The bar tab is now open for you to enjoy.</div></div>
-      <div class="event"><div class="event-dot">🚪</div><div class="event-time">5:30 PM</div><div class="event-title">Guests invited back into the Grandview Room</div><div class="event-desc">Please return to the Grandview Room, and find your seat.</div></div>
-      <div class="event"><div class="event-dot">🎤</div><div class="event-time">5:45 PM</div><div class="event-title">The Bride & Groom's grand entrance</div><div class="event-desc">Let’s officially welcome the happy couple and kick off the evening of festivities.</div></div>
-      <div class="event"><div class="event-dot">🍛</div><div class="event-time">6:00 PM</div><div class="event-title">Dinner commences</div><div class="event-desc">Savor a delicious Indian buffet at two stations—enjoy the flavors!</div></div>
-      <div class="event"><div class="event-dot">🗣️</div><div class="event-time">7:15 PM</div><div class="event-title">Speeches</div><div class="event-desc">Listen to touching and entertaining speeches from loved ones.</div></div>
-      <div class="event"><div class="event-dot">🍰</div><div class="event-time">7:45 PM</div><div class="event-title">Dessert Station open</div><div class="event-desc">Treat yourself to a variety of desserts at our dessert station.</div></div>
-      <div class="event"><div class="event-dot">💃</div><div class="event-time">7:45 PM</div><div class="event-title">First Dance and dancing begins</div><div class="event-desc">Join us on the dance floor as the newlyweds share their first dance and the celebration continues!</div></div>
-      <div class="event"><div class="event-dot">☕</div><div class="event-time">8:00 PM</div><div class="event-title">Tea & Coffee served buffet style</div><div class="event-desc">Enjoy a warm cup of tea or coffee, served buffet style for your comfort.</div></div>
-      <div class="event"><div class="event-dot">🔒</div><div class="event-time">11:30 PM</div><div class="event-title">Bar Tab closed</div><div class="event-desc">Last call for drinks—enjoy one final toast before the night ends.</div></div>
-      <div class="event"><div class="event-dot">🎉</div><div class="event-time">11:59 PM</div><div class="event-title">Reception concludes and guests depart</div><div class="event-desc">Thank you for celebrating with us! Wishing you a safe and happy journey home.</div></div>
+      <div class="event">
+          <div class="event-dot">🥂📷🍵</div>
+        <div class="event-time">4:30 PM</div>
+        <div class="event-title">Cocktail Hour, Photos & Refreshments</div>
+        <div class="event-desc">
+          Step outside to the Mango Tree Terrace for a lively cocktail hour—relax and mingle with friends and family.<br>
+          Capture memories with group and family photos, and don’t forget to get a picture with the married couple!<br>
+          Enjoy a delicious cup of chai at the Chai Station, savor a variety of tasty canapés, and raise a glass as the bar tab opens for all to enjoy.
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-dot">🍽️🍸</div>
+        <div class="event-time">5:30 PM</div>
+        <div class="event-title">Return to Grandview Room</div>
+        <div class="event-desc">Please return to the Grandview Room and find your seat for the next chapter of the celebration.</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">💑💍</div>
+        <div class="event-time">5:45 PM</div>
+        <div class="event-title">Bride & Groom's Grand Entrance</div>
+        <div class="event-desc">Let’s officially welcome the happy couple and kick off the evening of festivities with joy and applause.</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">🍽️🌸</div>
+        <div class="event-time">6:00 PM</div>
+        <div class="event-title">Dinner & Indian Buffet</div>
+        <div class="event-desc">Savor a delicious Indian buffet at two stations—enjoy the flavors and share laughter with loved ones.</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">🎤🕊️</div>
+        <div class="event-time">7:15 PM</div>
+        <div class="event-title">Speeches</div>
+        <div class="event-desc">Listen to touching and entertaining speeches from family and friends, celebrating love and togetherness.</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">🍰💃</div>
+        <div class="event-time">7:45 PM</div>
+        <div class="event-title">Dessert Station & First Dance</div>
+        <div class="event-desc">Treat yourself to a variety of desserts at our dessert station, then join us on the dance floor as the newlyweds share their first dance and the celebration continues!</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">☕🍵</div>
+        <div class="event-time">8:00 PM</div>
+        <div class="event-title">Tea & Coffee Buffet</div>
+        <div class="event-desc">Enjoy a warm cup of tea or coffee, served buffet style for your comfort and relaxation.</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">🥂🔒</div>
+        <div class="event-time">11:30 PM</div>
+        <div class="event-title">Bar Tab Closed</div>
+        <div class="event-desc">Last call for drinks—enjoy one final toast before the night ends and the festivities wind down.</div>
+      </div>
+      <div class="event">
+        <div class="event-dot">💖🎉</div>
+        <div class="event-time">11:59 PM</div>
+        <div class="event-title">Reception Concludes</div>
+        <div class="event-desc">Thank you for celebrating with us! Wishing you a safe and happy journey home as the night comes to a close.</div>
+      </div>
     </div>
   <script>
     // Helper: parse 12-hour time string to Date (Brisbane time)
@@ -454,6 +441,9 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       const events = document.querySelectorAll('.event');
+      const nowBtn = document.getElementById('now-btn');
+      let nowIdx = -1;
+
       // Interactive: highlight event on click
       events.forEach((ev, idx) => {
         ev.addEventListener('click', function() {
@@ -466,20 +456,17 @@
 
       // Now indicator logic
       function updateNowIndicator(scrollToNow = false) {
-        // Remove previous now/selected class and marker
         events.forEach(ev => {
           ev.classList.remove('now');
           ev.classList.remove('selected');
           const marker = ev.querySelector('.now-marker');
           if (marker) marker.remove();
         });
-        let nowIdx = -1;
+        nowIdx = -1;
         const now = new Date();
-        // Get Brisbane time offset
         const brisbaneOffset = 10 * 60; // UTC+10, no DST for simplicity
         const localOffset = -now.getTimezoneOffset();
         const brisbaneNow = new Date(now.getTime() + (brisbaneOffset - localOffset) * 60000);
-        // Find the first event that is in the future or just started
         let minDiff = Infinity;
         events.forEach((ev, idx) => {
           const timeStr = ev.querySelector('.event-time').textContent.trim();
@@ -494,7 +481,6 @@
         if (nowIdx >= 0) {
           events[nowIdx].classList.add('now');
           events[nowIdx].classList.add('selected');
-          // Add visible marker
           const marker = document.createElement('div');
           marker.className = 'now-marker';
           marker.innerHTML = '<span class="now-dot">🕒</span><span class="now-label">Now</span>';
@@ -506,8 +492,18 @@
           }
         }
       }
+
+      // Always-visible Now button logic
+      nowBtn.addEventListener('click', function() {
+        if (nowIdx >= 0) {
+          events[nowIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          events.forEach(e => e.classList.remove('selected'));
+          events[nowIdx].classList.add('selected');
+        }
+      });
+
       updateNowIndicator(true); // scroll on first load
-      setInterval(() => updateNowIndicator(true), 60 * 1000); // update every minute and scroll
+      setInterval(() => updateNowIndicator(false), 60 * 1000); // update every minute
     });
   </script>
     </div>
