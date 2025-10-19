@@ -273,10 +273,18 @@
         <input id="name-input" name="name" type="text" placeholder="e.g., Kira Platt-Behrens" autocomplete="name" required />
         <button type="submit" class="lookup-btn">Find my seat</button>
       </div>
+      <section id="suggestions" aria-live="polite"></section>
     </form>
     <div id="status"></div>
     <section id="result" aria-live="polite"></section>
-    <section id="suggestions" aria-live="polite"></section>
+    #suggestions {
+      margin-top: 4px;
+      margin-bottom: 0;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+      box-sizing: border-box;
+    }
 
     <nav style="margin: 24px 0 0 0;">
       <a href="schedule.html" style="color: var(--accent); font-weight: 600; font-size: 1.1em;">View the Wedding Day Schedule &rarr;</a>
