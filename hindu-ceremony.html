@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hindu Wedding Ceremony Stages</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .floral-garland {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 60px;
+      z-index: 3;
+      pointer-events: none;
+      margin-bottom: 16px;
+    }
+    .botanical-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .botanical-leaf {
+      position: absolute;
+      opacity: 0.18;
+      filter: blur(0.5px);
+    }
+    .leaf1 { left: 2vw; top: 2vh; width: 120px; }
+    .leaf2 { right: 3vw; top: 8vh; width: 90px; transform: rotate(20deg); }
+    .leaf3 { left: 10vw; bottom: 4vh; width: 100px; transform: rotate(-15deg); }
+    .leaf4 { right: 8vw; bottom: 2vh; width: 140px; transform: rotate(-30deg); }
+    .leaf5 { left: 50vw; top: 0vh; width: 80px; transform: rotate(10deg); }
+    .leaf6 { right: 12vw; top: 40vh; width: 110px; transform: rotate(-20deg); }
+    .leaf7 { left: 5vw; bottom: 30vh; width: 70px; transform: rotate(25deg); }
+    .leaf8 { right: 40vw; bottom: 0vh; width: 100px; transform: rotate(15deg); }
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(135deg, #e6f4ea 0%, #f7f5e6 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400;
+      color: #34a853;
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto 32px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(52,168,83,0.08);
+      padding: 32px 24px 32px 24px;
+    }
+    .stage {
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6f4ea;
+    }
+    .stage:last-child {
+      border-bottom: none;
+    }
+    .stage-title {
+      font-size: 1.4rem;
+      color: #388e3c;
+      margin-bottom: 8px;
+      font-family: 'Great Vibes', cursive;
+    }
+    .stage-desc {
+      font-size: 1.08rem;
+      color: #444;
+      line-height: 1.7;
+    }
+    .return-btn {
+      display: block;
+      margin: 40px auto 0 auto;
+      padding: 14px 32px;
+      background: var(--accent, #34a853);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(52,168,83,0.10);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      text-align: center;
+      max-width: 320px;
+    }
+    .return-btn:hover {
+      background: #81c995;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(52,168,83,0.18);
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 12px 4px 24px 4px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .stage-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Mandap Illustration -->
+  <div style="width:100%;display:flex;justify-content:center;margin-top:24px;margin-bottom:16px;z-index:10;position:relative;">
+    <svg viewBox="0 0 340 120" width="340" height="120" style="max-width:95vw;">
+      <!-- Mandap pillars -->
+      <rect x="30" y="40" width="16" height="60" rx="6" fill="#b7a16a"/>
+      <rect x="294" y="40" width="16" height="60" rx="6" fill="#b7a16a"/>
+      <rect x="110" y="40" width="16" height="60" rx="6" fill="#b7a16a"/>
+      <rect x="214" y="40" width="16" height="60" rx="6" fill="#b7a16a"/>
+      <!-- Mandap canopy -->
+      <rect x="20" y="30" width="300" height="18" rx="9" fill="#e57399"/>
+      <ellipse cx="170" cy="39" rx="150" ry="12" fill="#f7e6b2" opacity="0.5"/>
+      <!-- Garlands -->
+      <path d="M38,48 Q85,70 118,48" stroke="#e57399" stroke-width="4" fill="none"/>
+      <path d="M222,48 Q255,70 302,48" stroke="#e57399" stroke-width="4" fill="none"/>
+      <circle cx="78" cy="58" r="5" fill="#e57399"/>
+      <circle cx="262" cy="58" r="5" fill="#e57399"/>
+      <!-- Sacred fire base -->
+      <ellipse cx="170" cy="100" rx="32" ry="10" fill="#b7a16a"/>
+      <ellipse cx="170" cy="104" rx="22" ry="6" fill="#f7e6b2" opacity="0.7"/>
+      <!-- Sacred fire (animated) -->
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-2;0,0" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+        <path d="M170 98 Q168 90 170 86 Q172 90 170 98 Z" fill="#ffd700">
+          <animate attributeName="d" values="M170 98 Q168 90 170 86 Q172 90 170 98 Z;M170 98 Q167 92 170 84 Q173 92 170 98 Z;M170 98 Q168 90 170 86 Q172 90 170 98 Z" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M170 98 Q169 94 170 90 Q171 94 170 98 Z" fill="#ff9800" opacity="0.8">
+          <animate attributeName="d" values="M170 98 Q169 94 170 90 Q171 94 170 98 Z;M170 98 Q168 95 170 89 Q172 95 170 98 Z;M170 98 Q169 94 170 90 Q171 94 170 98 Z" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M170 98 Q170 96 170 94 Q170 96 170 98 Z" fill="#e57300" opacity="0.7">
+          <animate attributeName="d" values="M170 98 Q170 96 170 94 Q170 96 170 98 Z;M170 98 Q169 97 170 93 Q171 97 170 98 Z;M170 98 Q170 96 170 94 Q170 96 170 98 Z" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      <!-- Mandap floor shadow -->
+      <ellipse cx="170" cy="112" rx="60" ry="8" fill="#b7a16a" opacity="0.18"/>
+    </svg>
+  </div>
+  <svg class="floral-garland" viewBox="0 0 420 60">
+    <path d="M20,50 Q80,10 210,30 Q340,10 400,50" stroke="#7cbf7b" stroke-width="4" fill="none"/>
+    <circle cx="80" cy="20" r="10" fill="#e57399"/>
+    <circle cx="210" cy="30" r="12" fill="#e57399"/>
+    <circle cx="340" cy="20" r="10" fill="#e57399"/>
+    <ellipse cx="60" cy="30" rx="8" ry="4" fill="#b7e2c6"/>
+    <ellipse cx="100" cy="15" rx="7" ry="3" fill="#b7e2c6"/>
+    <ellipse cx="190" cy="40" rx="8" ry="4" fill="#b7e2c6"/>
+    <ellipse cx="230" cy="20" rx="7" ry="3" fill="#b7e2c6"/>
+    <ellipse cx="320" cy="35" rx="8" ry="4" fill="#b7e2c6"/>
+    <ellipse cx="360" cy="15" rx="7" ry="3" fill="#b7e2c6"/>
+  </svg>
+  <div class="botanical-bg">
+    <svg class="botanical-leaf leaf1" viewBox="0 0 64 64"><path d="M32 2 Q52 22 32 62 Q12 22 32 2 Z" fill="#7cbf7b"/></svg>
+    <svg class="botanical-leaf leaf2" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="28" ry="16" fill="#b6e2c6"/></svg>
+    <svg class="botanical-leaf leaf3" viewBox="0 0 64 64"><path d="M32 10 Q50 32 32 54 Q14 32 32 10 Z" fill="#a3d9a5"/></svg>
+    <svg class="botanical-leaf leaf4" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="20" ry="10" fill="#e2eac6"/></svg>
+    <svg class="botanical-leaf leaf5" viewBox="0 0 64 64"><path d="M32 5 Q60 32 32 59 Q4 32 32 5 Z" fill="#8fd19e"/></svg>
+    <svg class="botanical-leaf leaf6" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="24" ry="12" fill="#c6e2b6"/></svg>
+    <svg class="botanical-leaf leaf7" viewBox="0 0 64 64"><path d="M32 12 Q54 32 32 52 Q10 32 32 12 Z" fill="#b7e2c6"/></svg>
+    <svg class="botanical-leaf leaf8" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="18" ry="8" fill="#d9e2a3"/></svg>
+  </div>
+  <div class="container">
+    <h1>Stages of a Hindu Wedding Ceremony</h1>
+    <div class="stage">
+  <div class="stage-title">1. Baraat (Groom's Procession)</div>
+  <div class="stage-desc">The groom arrives at the wedding venue in a lively procession, often on horseback or in a decorated car, accompanied by music, dancing, and his family and friends. The Baraat is a celebration of joy and excitement, symbolizing the groom's journey to seek the bride's hand in marriage. Guests dance and sing, and the groom is welcomed by the bride's family at the entrance with a tilak (vermilion mark) and aarti (prayer ritual).</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">2. Milni (Meeting of the Families)</div>
+  <div class="stage-desc">The Milni is a formal meeting between the elders of both families. Garlands, gifts, and warm embraces are exchanged, signifying mutual respect and the union of two families. This ritual sets a tone of harmony and togetherness for the ceremony ahead.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">3. Ganesh Puja (Invocation of Lord Ganesha)</div>
+  <div class="stage-desc">Before the main wedding rituals begin, a prayer is offered to Lord Ganesha, the remover of obstacles. This puja seeks blessings for a smooth, obstacle-free ceremony and a prosperous married life for the couple.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">4. Kanyadaan (Giving Away the Bride)</div>
+  <div class="stage-desc">Kanyadaan is one of the most emotional moments, where the bride's parents formally give their daughter to the groom. The father places the bride's hand in the groom's, entrusting her happiness and well-being to him. This act is considered a sacred duty and a blessing for the couple's future.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">5. Jai Mala (Exchange of Garlands)</div>
+  <div class="stage-desc">The bride and groom exchange beautiful floral garlands, symbolizing their mutual acceptance and respect. This playful and lighthearted ritual often involves friends and family lifting the couple to make the exchange more fun and memorable.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">6. Vivah Havan (Sacred Fire Ritual)</div>
+  <div class="stage-desc">A sacred fire (Agni) is lit at the center of the mandap (wedding altar). The couple makes offerings of ghee, grains, and herbs into the fire while priests chant Vedic mantras. The fire is considered a divine witness to the marriage, and its presence purifies the union.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">7. Mangal Pheras (Circling the Fire)</div>
+  <div class="stage-desc">The couple walks around the sacred fire seven times, each round (phera) representing a specific vow and aspect of married life: nourishment, strength, prosperity, family, progeny, health, and friendship. With each step, the couple promises to support and cherish each other.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">8. Saptapadi (Seven Steps)</div>
+  <div class="stage-desc">The Saptapadi is the most important rite, where the bride and groom take seven steps together, each step accompanied by a sacred vow. These vows cover friendship, mutual respect, health, spiritual growth, and lifelong companionship. After the seventh step, the couple is officially married in the eyes of tradition and law.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">9. Sindoor & Mangalsutra</div>
+  <div class="stage-desc">The groom applies sindoor (vermilion powder) to the bride's hair parting and ties the mangalsutra (sacred necklace) around her neck. These acts signify the bride's new status as a married woman and are symbols of love, commitment, and protection.</div>
+    </div>
+    <div class="stage">
+  <div class="stage-title">10. Ashirwad (Blessings)</div>
+  <div class="stage-desc">The ceremony concludes with the couple seeking blessings (ashirwad) from elders, family, and friends. These blessings are for a happy, prosperous, and harmonious married life. The couple is showered with rice, flowers, and good wishes as they begin their new journey together.</div>
+    </div>
+    <a href="index.html" class="return-btn">&larr; Back to Seat Lookup</a>
+  <a href="schedule.html" class="return-btn" style="margin-top:16px;background:#f59e42;">&larr; Back to Schedule</a>
+  <!-- Decorative elements for elegance -->
+  <!-- (Floral garland and botanical background already added above) -->
+  </div>
+</body>
+</html>
