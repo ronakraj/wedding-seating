@@ -4,6 +4,28 @@
     <title>Wedding Schedule</title>
     <link rel="stylesheet" href="style.css">
     <style>
+      body {
+        background: linear-gradient(135deg, #e6f4ea 0%, #f7f5e6 100%);
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+      .botanical-bg {
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .botanical-leaf {
+        position: absolute;
+        opacity: 0.18;
+        filter: blur(0.5px);
+      }
+      .leaf1 { left: 2vw; top: 2vh; width: 120px; }
+      .leaf2 { right: 3vw; top: 8vh; width: 90px; transform: rotate(20deg); }
+      .leaf3 { left: 10vw; bottom: 4vh; width: 100px; transform: rotate(-15deg); }
+      .leaf4 { right: 8vw; bottom: 2vh; width: 140px; transform: rotate(-30deg); }
+    </style>
       .timeline {
         margin: 32px auto;
         max-width: 600px;
@@ -244,7 +266,13 @@
     }
   </style>
 </head>
-<body>
+  <body>
+    <div class="botanical-bg">
+      <svg class="botanical-leaf leaf1" viewBox="0 0 64 64"><path d="M32 2 Q52 22 32 62 Q12 22 32 2 Z" fill="#7cbf7b"/></svg>
+      <svg class="botanical-leaf leaf2" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="28" ry="16" fill="#b6e2c6"/></svg>
+      <svg class="botanical-leaf leaf3" viewBox="0 0 64 64"><path d="M32 10 Q50 32 32 54 Q14 32 32 10 Z" fill="#a3d9a5"/></svg>
+      <svg class="botanical-leaf leaf4" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="20" ry="10" fill="#e2eac6"/></svg>
+    </div>
   <div class="container">
     <h1>Kiraj's Wedding Day Schedule</h1>
     <div class="timeline" id="timeline">
