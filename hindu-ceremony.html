@@ -96,6 +96,25 @@
       color: #fff;
       box-shadow: 0 4px 16px rgba(52,168,83,0.18);
     }
+    .marigold-confetti {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .marigold-dot {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.85;
+      box-shadow: 0 0 0 6px #f7e6b2, 0 0 0 12px #f9b23344;
+      animation: marigold-fall 7s linear infinite;
+      background: radial-gradient(circle at 60% 40%, #ffd700 60%, #f9b233 100%);
+    }
+    @keyframes marigold-fall {
+      0% { transform: translateY(-10vh) scale(1); opacity: 0.85; }
+      80% { opacity: 0.85; }
+      100% { transform: translateY(110vh) scale(1.1); opacity: 0; }
+    }
     @media (max-width: 600px) {
       .container {
         padding: 12px 4px 24px 4px;
@@ -211,22 +230,6 @@
     <div class="stage">
       <div class="stage-title">6. Vivah Havan (Sacred Fire Ritual)</div>
       <div class="stage-desc" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <span>
-          <svg width="48" height="60" viewBox="0 0 48 60" style="vertical-align:middle;" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <animateTransform attributeName="transform" type="translate" values="0,0;0,-2;0,0" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
-              <path d="M24 58 C10 48 8 36 18 28 C14 18 28 10 24 2 C32 10 38 18 32 28 C42 36 38 48 24 58 Z" fill="#ffb300">
-                <animate attributeName="d" values="M24 58 C10 48 8 36 18 28 C14 18 28 10 24 2 C32 10 38 18 32 28 C42 36 38 48 24 58 Z;M24 58 C12 48 10 36 20 28 C16 18 28 12 24 2 C30 12 36 18 30 28 C40 36 36 48 24 58 Z;M24 58 C10 48 8 36 18 28 C14 18 28 10 24 2 C32 10 38 18 32 28 C42 36 38 48 24 58 Z" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
-              </path>
-              <path d="M24 48 C16 42 16 34 22 30 C20 24 28 20 24 10 C28 20 34 24 30 30 C36 34 32 42 24 48 Z" fill="#ff7043">
-                <animate attributeName="d" values="M24 48 C16 42 16 34 22 30 C20 24 28 20 24 10 C28 20 34 24 30 30 C36 34 32 42 24 48 Z;M24 48 C18 42 18 34 24 30 C22 24 28 22 24 10 C26 22 32 24 28 30 C34 34 30 42 24 48 Z;M24 48 C16 42 16 34 22 30 C20 24 28 20 24 10 C28 20 34 24 30 30 C36 34 32 42 24 48 Z" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
-              </path>
-              <path d="M24 38 C20 36 20 32 22 30 C22 28 26 26 24 20 C26 26 28 28 26 30 C28 32 28 36 24 38 Z" fill="#fff176">
-                <animate attributeName="d" values="M24 38 C20 36 20 32 22 30 C22 28 26 26 24 20 C26 26 28 28 26 30 C28 32 28 36 24 38 Z;M24 38 C22 36 22 32 24 30 C24 28 26 28 24 20 C24 28 26 28 24 30 C26 32 26 36 24 38 Z;M24 38 C20 36 20 32 22 30 C22 28 26 26 24 20 C26 26 28 28 26 30 C28 32 28 36 24 38 Z" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite"/>
-              </path>
-            </g>
-          </svg>
-        </span>
         <span style="min-width:180px;">A sacred fire (Agni) is lit at the center of the mandap (wedding altar). The couple makes offerings of ghee, grains, and herbs into the fire while priests chant Vedic mantras. The fire is considered a divine witness to the marriage, and its presence purifies the union.</span>
       </div>
     </div>
@@ -248,6 +251,20 @@
     </div>
   <!-- Decorative elements for elegance -->
   <!-- (Floral garland and botanical background already added above) -->
+  </div>
+  <a href="index.html" class="return-btn" style="background:#34a853;margin:40px auto 0 auto;display:block;max-width:320px;">Back to Home</a>
+  <div class="marigold-confetti">
+    <!-- Marigold flower confetti dots -->
+    <div class="marigold-dot" style="left:5vw;top:0vh;width:22px;height:22px;background:#f9b233;animation-delay:0s;"></div>
+    <div class="marigold-dot" style="left:15vw;top:0vh;width:18px;height:18px;background:#f9b233;animation-delay:1s;"></div>
+    <div class="marigold-dot" style="left:25vw;top:0vh;width:20px;height:20px;background:#f9b233;animation-delay:2s;"></div>
+    <div class="marigold-dot" style="left:35vw;top:0vh;width:24px;height:24px;background:#f9b233;animation-delay:1.5s;"></div>
+    <div class="marigold-dot" style="left:45vw;top:0vh;width:19px;height:19px;background:#f9b233;animation-delay:0.5s;"></div>
+    <div class="marigold-dot" style="left:55vw;top:0vh;width:21px;height:21px;background:#f9b233;animation-delay:2.5s;"></div>
+    <div class="marigold-dot" style="left:65vw;top:0vh;width:23px;height:23px;background:#f9b233;animation-delay:1.2s;"></div>
+    <div class="marigold-dot" style="left:75vw;top:0vh;width:20px;height:20px;background:#f9b233;animation-delay:0.8s;"></div>
+    <div class="marigold-dot" style="left:85vw;top:0vh;width:22px;height:22px;background:#f9b233;animation-delay:2.2s;"></div>
+    <div class="marigold-dot" style="left:95vw;top:0vh;width:19px;height:19px;background:#f9b233;animation-delay:1.7s;"></div>
   </div>
 </body>
 </html>
