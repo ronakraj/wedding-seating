@@ -199,9 +199,10 @@
 
       // Now indicator logic
       function updateNowIndicator(scrollToNow = false) {
-        // Remove previous now class and marker
+        // Remove previous now/selected class and marker
         events.forEach(ev => {
           ev.classList.remove('now');
+          ev.classList.remove('selected');
           const marker = ev.querySelector('.now-marker');
           if (marker) marker.remove();
         });
@@ -225,6 +226,7 @@
         });
         if (nowIdx >= 0) {
           events[nowIdx].classList.add('now');
+          events[nowIdx].classList.add('selected');
           // Add visible marker
           const marker = document.createElement('div');
           marker.className = 'now-marker';
@@ -238,7 +240,7 @@
         }
       }
       updateNowIndicator(true); // scroll on first load
-      setInterval(() => updateNowIndicator(false), 60 * 1000); // update every minute
+      setInterval(() => updateNowIndicator(true), 60 * 1000); // update every minute and scroll
     });
   </script>
     </div>
