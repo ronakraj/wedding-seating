@@ -1,59 +1,158 @@
-
-  <style>
-    .event {
-      opacity: 0.5;
-      filter: grayscale(0.2);
-      transition: opacity 0.3s, filter 0.3s, background 0.2s;
-    }
-    .event.now {
-      opacity: 1;
-      filter: none;
-      background: #fffbe6;
-      border-left: 4px solid #f59e42;
-      box-shadow: 0 4px 16px rgba(245,158,66,0.10);
-      z-index: 2;
-    }
-    .now-marker {
-      position: absolute;
-      left: -56px;
-      top: 24px;
-      display: flex;
-      align-items: center;
-      z-index: 12;
-      pointer-events: none;
-    }
-    .now-dot {
-      width: 20px;
-      height: 20px;
-      background: #fffbe6;
-      border: 4px solid #f59e42;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      color: #f59e42;
-      box-shadow: 0 1px 4px rgba(245,158,66,0.12);
-      margin-right: 6px;
-    }
-    .now-label {
-      color: #f59e42;
-      font-weight: bold;
-      font-size: 0.95rem;
-      background: #fffbe6;
-      border-radius: 6px;
-      padding: 2px 8px;
-      box-shadow: 0 1px 4px rgba(245,158,66,0.08);
-      margin-left: 2px;
-    }
-    .event.now {
-      background: #fffbe6;
-      border-left: 4px solid #f59e42;
-      box-shadow: 0 4px 16px rgba(245,158,66,0.10);
-    }
-    .event.now .event-dot {
-      border: 4px solid #f59e42;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .timeline {
+        margin: 32px auto;
+        max-width: 600px;
+        padding: 0 16px;
+        position: relative;
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 32px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(var(--accent, #7c3aed), #e0e7ff);
+        border-radius: 2px;
+        z-index: 0;
+      }
+      .event {
+        opacity: 0.5;
+        filter: grayscale(0.2);
+        transition: opacity 0.3s, filter 0.3s, background 0.2s;
+        position: relative;
+        background: var(--card, #fff);
+        margin-bottom: 32px;
+        padding: 16px 24px 16px 64px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(16,24,40,0.04);
+        cursor: pointer;
+        z-index: 1;
+      }
+      .event.selected {
+        background: #f3f0ff;
+        box-shadow: 0 4px 16px rgba(124,58,237,0.10);
+        border-left: 4px solid var(--accent, #7c3aed);
+      }
+      .event.now {
+        opacity: 1;
+        filter: none;
+        background: #fffbe6;
+        border-left: 4px solid #f59e42;
+        box-shadow: 0 4px 16px rgba(245,158,66,0.10);
+        z-index: 2;
+      }
+      .event-dot {
+        position: absolute;
+        left: 16px;
+        top: 24px;
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        border: 4px solid var(--accent, #7c3aed);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        z-index: 2;
+        box-shadow: 0 1px 4px rgba(124,58,237,0.08);
+        transition: border 0.2s;
+      }
+      .event.selected .event-dot {
+        border: 4px solid #a78bfa;
+      }
+      .event.now .event-dot {
+        border: 4px solid #f59e42;
+      }
+      .event-time {
+        font-weight: bold;
+        color: var(--accent, #7c3aed);
+        margin-bottom: 4px;
+      }
+      .event-title {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+      .event-desc {
+        color: var(--muted, #6b7280);
+        font-size: 1rem;
+      }
+      .now-marker {
+        position: absolute;
+        left: -56px;
+        top: 24px;
+        display: flex;
+        align-items: center;
+        z-index: 12;
+        pointer-events: none;
+      }
+      .now-dot {
+        width: 20px;
+        height: 20px;
+        background: #fffbe6;
+        border: 4px solid #f59e42;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: #f59e42;
+        box-shadow: 0 1px 4px rgba(245,158,66,0.12);
+        margin-right: 6px;
+      }
+      .now-label {
+        color: #f59e42;
+        font-weight: bold;
+        font-size: 0.95rem;
+        background: #fffbe6;
+        border-radius: 6px;
+        padding: 2px 8px;
+        box-shadow: 0 1px 4px rgba(245,158,66,0.08);
+        margin-left: 2px;
+      }
+      @media (max-width: 600px) {
+        .timeline {
+          padding: 0 2px;
+        }
+        .event {
+          padding-left: 56px;
+        }
+        .event-dot {
+          left: 8px;
+          width: 24px;
+          height: 24px;
+          font-size: 1rem;
+        }
+      }
+      .return-btn {
+        display: block;
+        margin: 40px auto 32px auto;
+        padding: 14px 32px;
+        background: var(--accent, #7c3aed);
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(124,58,237,0.08);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        text-align: center;
+        max-width: 320px;
+        text-align: center;
+      }
+      .return-btn:hover {
+        background: #a78bfa;
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(124,58,237,0.12);
+      }
+    </style>
+  </head>
   </style>
 <!DOCTYPE html>
 <html lang="en">
