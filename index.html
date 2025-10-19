@@ -26,17 +26,17 @@
         gap: 8px;
       }
       .lookup-btn, button[type="submit"] {
-        padding: 0 12px;
+        min-width: 120px;
+        height: 44px;
+        padding: 12px 12px;
         font-size: 1rem;
         width: 100%;
         box-sizing: border-box;
-        min-height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
         white-space: normal;
         word-break: break-word;
-        height: auto;
       }
       label {
         font-size: 1rem;
@@ -47,7 +47,7 @@
     }
     .input-row {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       gap: 8px;
     }
     #name-input {
@@ -66,7 +66,8 @@
       display: block;
     }
     .lookup-btn, button[type="submit"] {
-      min-height: 48px;
+      min-width: 140px;
+      height: 48px;
       margin: 0;
       max-width: none;
       display: flex;
@@ -76,7 +77,6 @@
       padding: 14px 32px;
       white-space: normal;
       word-break: break-word;
-      height: auto;
     }
     body {
       font-family: 'Lora', serif;
