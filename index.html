@@ -16,16 +16,25 @@
       #name-input {
         padding: 12px 12px;
         font-size: 1rem;
+        height: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
       }
       .input-row {
         flex-direction: column;
         gap: 8px;
       }
       .lookup-btn, button[type="submit"] {
-        padding: 12px 12px;
+        padding: 0 12px;
         font-size: 1rem;
         width: 100%;
         box-sizing: border-box;
+        height: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       label {
         font-size: 1rem;
@@ -40,21 +49,31 @@
       gap: 8px;
     }
     #name-input {
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(52,168,83,0.08);
-      border: 1px solid #b7e2c6;
-      width: 100%;
-      font-family: 'Lora', serif;
-      margin: 0;
-      box-sizing: border-box;
-      height: auto;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(52,168,83,0.08);
+  border: 1px solid #b7e2c6;
+  width: 100%;
+  font-family: 'Lora', serif;
+  margin: 0;
+  box-sizing: border-box;
+  height: 48px;
+  min-height: 48px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
     }
     .lookup-btn, button[type="submit"] {
-      height: auto;
-      margin: 0;
-      max-width: none;
+  height: 48px;
+  min-height: 48px;
+  margin: 0;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding: 0 32px;
     }
     body {
       font-family: 'Lora', serif;
@@ -285,14 +304,13 @@
     </form>
     <div id="status"></div>
     <section id="result" aria-live="polite"></section>
-
-  <a href="hindu-ceremony.html" class="lookup-btn" style="background:#f59e42;margin-top:8px;">Learn about the Hindu Wedding Ceremony</a>
-  <nav style="margin: 24px 0 0 0;">
-  <a href="schedule.html" class="lookup-btn" style="background:#34a853;margin-top:8px;">View the Wedding Day Schedule</a>
-    </nav>
-    <footer>
-      <p class="muted">Having trouble? Try the exact name on your invite or ask a host to help.</p>
-    </footer>
+  <footer>
+    <p class="muted">Having trouble? Try the exact name on your invite or ask a host to help.</p>
+  </footer>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:32px 0 0 0;">
+    <a href="hindu-ceremony.html" class="lookup-btn" style="background:#f59e42;">Learn about the Hindu Wedding Ceremony</a>
+    <a href="schedule.html" class="lookup-btn" style="background:#34a853;">View the Wedding Day Schedule</a>
+  </div>
   </main>
 
   <script src="app.js"></script>
