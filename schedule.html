@@ -27,6 +27,10 @@
       .leaf2 { right: 3vw; top: 8vh; width: 90px; transform: rotate(20deg); }
       .leaf3 { left: 10vw; bottom: 4vh; width: 100px; transform: rotate(-15deg); }
       .leaf4 { right: 8vw; bottom: 2vh; width: 140px; transform: rotate(-30deg); }
+  .leaf5 { left: 50vw; top: 0vh; width: 80px; transform: rotate(10deg); }
+  .leaf6 { right: 12vw; top: 40vh; width: 110px; transform: rotate(-20deg); }
+  .leaf7 { left: 5vw; bottom: 30vh; width: 70px; transform: rotate(25deg); }
+  .leaf8 { right: 40vw; bottom: 0vh; width: 100px; transform: rotate(15deg); }
       .timeline {
         margin: 32px auto;
         max-width: 600px;
@@ -40,7 +44,7 @@
         top: 0;
         bottom: 0;
         width: 4px;
-        background: linear-gradient(var(--accent, #7c3aed), #e0e7ff);
+        background: linear-gradient(var(--accent, #34a853), #e6f4ea);
         border-radius: 2px;
         z-index: 0;
       }
@@ -57,9 +61,9 @@
         z-index: 1;
       }
       .event.selected {
-        background: #f3f0ff;
-        box-shadow: 0 4px 16px rgba(124,58,237,0.10);
-        border-left: 4px solid var(--accent, #7c3aed);
+        background: #e6f4ea;
+        box-shadow: 0 4px 16px rgba(52,168,83,0.10);
+        border-left: 4px solid var(--accent, #34a853);
       }
       .event.now {
         opacity: 1;
@@ -76,25 +80,25 @@
         width: 32px;
         height: 32px;
         background: #fff;
-        border: 4px solid var(--accent, #7c3aed);
+        border: 4px solid var(--accent, #34a853);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.3rem;
         z-index: 2;
-        box-shadow: 0 1px 4px rgba(124,58,237,0.08);
+        box-shadow: 0 1px 4px rgba(52,168,83,0.08);
         transition: border 0.2s;
       }
       .event.selected .event-dot {
-        border: 4px solid #a78bfa;
+        border: 4px solid #81c995;
       }
       .event.now .event-dot {
         border: 4px solid #f59e42;
       }
       .event-time {
         font-weight: bold;
-        color: var(--accent, #7c3aed);
+        color: var(--accent, #34a853);
         margin-bottom: 4px;
       }
       .event-title {
@@ -167,26 +171,26 @@
         text-align: center;
         max-width: 320px;
       }
-      .return-btn:hover {
-        background: #a78bfa;
+      .return-btn {
+        display: block;
+        margin: 40px auto 32px auto;
+        padding: 14px 32px;
+        background: var(--accent, #34a853);
         color: #fff;
-        box-shadow: 0 4px 16px rgba(124,58,237,0.12);
-        margin: 32px auto;
-        max-width: 600px;
-        padding: 0 16px;
-        position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 32px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(var(--accent, #7c3aed), #e0e7ff);
-      border-radius: 2px;
-      z-index: 0;
-    }
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(52,168,83,0.08);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        text-align: center;
+        max-width: 320px;
+      }
+      .return-btn:hover {
+        background: #81c995;
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(52,168,83,0.12);
+      }
     .event {
       position: relative;
       background: var(--card, #fff);
@@ -258,13 +262,17 @@
       <svg class="botanical-leaf leaf2" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="28" ry="16" fill="#b6e2c6"/></svg>
       <svg class="botanical-leaf leaf3" viewBox="0 0 64 64"><path d="M32 10 Q50 32 32 54 Q14 32 32 10 Z" fill="#a3d9a5"/></svg>
       <svg class="botanical-leaf leaf4" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="20" ry="10" fill="#e2eac6"/></svg>
+      <svg class="botanical-leaf leaf5" viewBox="0 0 64 64"><path d="M32 5 Q60 32 32 59 Q4 32 32 5 Z" fill="#8fd19e"/></svg>
+      <svg class="botanical-leaf leaf6" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="24" ry="12" fill="#c6e2b6"/></svg>
+      <svg class="botanical-leaf leaf7" viewBox="0 0 64 64"><path d="M32 12 Q54 32 32 52 Q10 32 32 12 Z" fill="#b7e2c6"/></svg>
+      <svg class="botanical-leaf leaf8" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="18" ry="8" fill="#d9e2a3"/></svg>
     </div>
   <div class="container">
     <h1>Kiraj's Wedding Day Schedule</h1>
     <div class="timeline" id="timeline">
       <div class="event"><div class="event-dot">👋</div><div class="event-time">2:30 PM</div><div class="event-title">Guest arrival to Hillstone</div><div class="event-desc">Welcome! Join us at the Mango Tree Terrace and start your day with smiles and excitement.</div></div>
       <div class="event"><div class="event-dot">🚌</div><div class="event-time">2:30 PM</div><div class="event-title">Kira, Ronakraj & Family arrive</div><div class="event-desc">Wave hello as the happy couple makes their grand entrance!</div></div>
-      <div class="event"><div class="event-dot">🤝</div><div class="event-time">2:45 PM</div><div class="event-title">Ronarkaj welcomed into the Grandview Room by Karin Behrens & Family</div><div class="event-desc">Bride's side, please make your way inside, and groom's side please enter with the Groom and his family.</div></div>
+      <div class="event"><div class="event-dot">🤝</div><div class="event-time">2:45 PM</div><div class="event-title">Ronakraj welcomed into the Grandview Room by Karin & Family</div><div class="event-desc">Bride's side, please make your way inside, and groom's side please enter with the Groom and his family.</div></div>
       <div class="event"><div class="event-dot">💍</div><div class="event-time">3:00 PM</div><div class="event-title">Hindu Ceremony Commences</div><div class="event-desc">All guests please find a seat in front of the Mandap to witness the sacred rituals.</div></div>
       <div class="event"><div class="event-dot">🍸</div><div class="event-time">4:30 PM</div><div class="event-title">Guests invited outside to Mango Tree Terrace for cocktail hour</div><div class="event-desc">Relax and mingle with friends and family.</div></div>
       <div class="event"><div class="event-dot">📸</div><div class="event-time">4:30 PM</div><div class="event-title">Congratulations, group and family photos</div><div class="event-desc">Capture memories with group and family photos—don’t forget to get a picture with the married couple!</div></div>
