@@ -377,7 +377,7 @@
         <div class="event-time">4:30 PM</div>
         <div class="event-title">Cocktail Hour, Photos & Refreshments</div>
         <div class="event-desc">
-          Step outside to the Mango Tree Terrace for a lively cocktail hour, chai and canapes.<br>
+          Step outside to the Mango Tree Terrace for a lively cocktail hour, photos, chai and canapes.<br>
         </div>
       </div>
       <div class="event">
@@ -425,7 +425,7 @@
       <div class="event">
         <div class="event-dot">🥂</div>
         <div class="event-time">11:30 PM</div>
-        <div class="event-title">Bar Tab Closed</div>
+        <div class="event-title">Bar Tab Closes</div>
         <div class="event-desc">Last call for drinks—enjoy one final toast before the night ends and the festivities wind down.</div>
       </div>
       <div class="event">
@@ -480,27 +480,44 @@
         const brisbaneOffset = 10 * 60; // UTC+10, no DST for simplicity
         const localOffset = -now.getTimezoneOffset();
         const brisbaneNow = new Date(now.getTime() + (brisbaneOffset - localOffset) * 60000);
-        let minDiff = Infinity;
-        events.forEach((ev, idx) => {
+        let found = false;
+        for (let idx = 0; idx < events.length; idx++) {
+          const ev = events[idx];
           const timeStr = ev.querySelector('.event-time').textContent.trim();
           const eventDate = parseEventTime(timeStr);
-          if (!eventDate) return;
+          if (!eventDate) continue;
           const diff = eventDate - brisbaneNow;
-          if (diff >= -15*60*1000 && diff < minDiff) { // within 15 min past or future
-            minDiff = diff;
+          // Highlight the first event whose time is >= now - 15 minutes
+          if (diff >= -15*60*1000) {
+            ev.classList.add('now');
+            ev.classList.add('selected');
+            const marker = document.createElement('div');
+            marker.className = 'now-marker';
+            marker.innerHTML = '<span class="now-dot">🕒</span><span class="now-label">Now</span>';
+            ev.prepend(marker);
             nowIdx = idx;
+            found = true;
+            if (scrollToNow) {
+              setTimeout(() => {
+                ev.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }, 100);
+            }
+            break;
           }
-        });
-        if (nowIdx >= 0) {
-          events[nowIdx].classList.add('now');
-          events[nowIdx].classList.add('selected');
+        }
+        // If all events are in the past, highlight the last one
+        if (!found && events.length > 0) {
+          const lastEv = events[events.length - 1];
+          lastEv.classList.add('now');
+          lastEv.classList.add('selected');
           const marker = document.createElement('div');
           marker.className = 'now-marker';
           marker.innerHTML = '<span class="now-dot">🕒</span><span class="now-label">Now</span>';
-          events[nowIdx].prepend(marker);
+          lastEv.prepend(marker);
+          nowIdx = events.length - 1;
           if (scrollToNow) {
             setTimeout(() => {
-              events[nowIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+              lastEv.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
           }
         }
