@@ -6,6 +6,105 @@
   <title>Kiraj Wedding Seating Lookup</title>
   <meta name="description" content="Find your wedding seat." />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(135deg, #e6f4ea 0%, #f7f5e6 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400;
+      font-size: 2.2rem;
+      color: #34a853;
+      letter-spacing: 1px;
+    }
+    .sub, label, .muted, nav a, button, .lookup-btn {
+      font-family: 'Lora', serif;
+    }
+    .muted {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+    /* ...existing botanical and accent styles... */
+    .botanical-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .botanical-leaf {
+      position: absolute;
+      opacity: 0.18;
+      filter: blur(0.5px);
+    }
+    .leaf1 { left: 2vw; top: 2vh; width: 120px; }
+    .leaf2 { right: 3vw; top: 8vh; width: 90px; transform: rotate(20deg); }
+    .leaf3 { left: 10vw; bottom: 4vh; width: 100px; transform: rotate(-15deg); }
+    .leaf4 { right: 8vw; bottom: 2vh; width: 140px; transform: rotate(-30deg); }
+    .leaf5 { left: 50vw; top: 0vh; width: 80px; transform: rotate(10deg); }
+    .leaf6 { right: 12vw; top: 40vh; width: 110px; transform: rotate(-20deg); }
+    .leaf7 { left: 5vw; bottom: 30vh; width: 70px; transform: rotate(25deg); }
+    .leaf8 { right: 40vw; bottom: 0vh; width: 100px; transform: rotate(15deg); }
+    :root {
+      --accent: #34a853;
+    }
+    .lookup-btn, button[type="submit"] {
+      display: block;
+      margin: 32px auto 24px auto;
+      padding: 14px 32px;
+      background: var(--accent, #34a853);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(52,168,83,0.08);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      text-align: center;
+      max-width: 320px;
+      border: none;
+      cursor: pointer;
+    }
+    .lookup-btn:hover, button[type="submit"]:hover {
+      background: #81c995;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(52,168,83,0.12);
+    }
+    nav a {
+      color: var(--accent, #34a853) !important;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #81c995 !important;
+    }
+    .suggestion {
+      background: #e6f4ea;
+      color: var(--accent, #34a853);
+      border-left: 4px solid var(--accent, #34a853);
+      box-shadow: 0 2px 8px rgba(52,168,83,0.08);
+      border-radius: 6px;
+      padding: 8px 16px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .suggestion.selected {
+      background: #fffbe6;
+      color: #f59e42;
+      border-left: 4px solid #f59e42;
+    }
+    #status {
+      margin-top: 16px;
+      color: #34a853;
+      font-weight: 600;
+    }
+  </style>
   <style>
     body {
       background: linear-gradient(135deg, #e6f4ea 0%, #f7f5e6 100%);
