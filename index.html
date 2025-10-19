@@ -8,15 +8,27 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    .input-row {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+    }
     #name-input {
       padding: 14px 32px;
       font-size: 1.1rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(52,168,83,0.08);
       border: 1px solid #b7e2c6;
-      max-width: 320px;
-      margin-right: 8px;
+      width: 100%;
       font-family: 'Lora', serif;
+      margin: 0;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .lookup-btn, button[type="submit"] {
+      height: auto;
+      margin: 0;
+      max-width: none;
     }
     body {
       font-family: 'Lora', serif;
