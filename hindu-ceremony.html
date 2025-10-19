@@ -7,51 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Animated icon styles for ceremony stages */
-    .stage-anim {
-      display: inline-block;
-      will-change: transform, filter;
-    }
-    .anim-bounce {
-      animation: bounceY 1.2s infinite;
-    }
-    @keyframes bounceY {
-      0%, 100% { transform: translateY(0); }
-      20% { transform: translateY(-8px); }
-      40% { transform: translateY(0); }
-      60% { transform: translateY(-4px); }
-      80% { transform: translateY(0); }
-    }
-    .anim-sway {
-      animation: sway 2.2s infinite ease-in-out;
-      transform-origin: 50% 80%;
-    }
-    @keyframes sway {
-      0%, 100% { transform: rotate(-3deg); }
-      50% { transform: rotate(5deg); }
-    }
-    .anim-pulse {
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { filter: brightness(1); transform: scale(1); }
-      50% { filter: brightness(1.2); transform: scale(1.13); }
-    }
-    .anim-float {
-      animation: float 2.5s infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .anim-rotate {
-      animation: rotate 2.8s infinite linear;
-      display: inline-block;
-    }
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
     .floral-garland {
       position: absolute;
       top: 0; left: 50%;
@@ -234,27 +189,27 @@
   <div class="container">
     <h1>Stages of a Hindu Wedding Ceremony</h1>
     <div class="stage">
-      <div class="stage-title">1. Baraat (Groom's Procession) <span class="stage-anim anim-bounce" style='font-size:1.3em;'>🕺</span><span class="stage-anim anim-float" style='font-size:1.3em;margin-left:2px;'>🐎</span></div>
+      <div class="stage-title">1. Baraat (Groom's Procession)</div>
       <div class="stage-desc">The groom arrives at the wedding venue in a lively procession, often on horseback or in a decorated car, accompanied by music, dancing, and his family and friends. The Baraat is a celebration of joy and excitement, symbolizing the groom's journey to seek the bride's hand in marriage. Guests dance and sing, and the groom is welcomed by the bride's family at the entrance with a tilak (vermilion mark) and aarti (prayer ritual).</div>
     </div>
     <div class="stage">
-      <div class="stage-title">2. Milni (Meeting of the Families) <span class="stage-anim anim-pulse" style='font-size:1.3em;'>🤝</span><span class="stage-anim anim-sway" style='font-size:1.3em;margin-left:2px;'>🌸</span></div>
+      <div class="stage-title">2. Milni (Meeting of the Families)</div>
       <div class="stage-desc">The Milni is a formal meeting between the elders of both families. Garlands, gifts, and warm embraces are exchanged, signifying mutual respect and the union of two families. This ritual sets a tone of harmony and togetherness for the ceremony ahead.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">3. Ganesh Puja (Invocation of Lord Ganesha) <span class="stage-anim anim-pulse" style='font-size:1.3em;'>🙏</span><span class="stage-anim anim-bounce" style='font-size:1.3em;margin-left:2px;'>🐘</span></div>
+      <div class="stage-title">3. Ganesh Puja (Invocation of Lord Ganesha)</div>
       <div class="stage-desc">Before the main wedding rituals begin, a prayer is offered to Lord Ganesha, the remover of obstacles. This puja seeks blessings for a smooth, obstacle-free ceremony and a prosperous married life for the couple.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">4. Kanyadaan (Giving Away the Bride) <span class="stage-anim anim-float" style='font-size:1.3em;'>👰</span><span class="stage-anim anim-pulse" style='font-size:1.3em;margin-left:2px;'>🤲</span></div>
+      <div class="stage-title">4. Kanyadaan (Giving Away the Bride)</div>
       <div class="stage-desc">Kanyadaan is one of the most emotional moments, where the bride's parents formally give their daughter to the groom. The father places the bride's hand in the groom's, entrusting her happiness and well-being to him. This act is considered a sacred duty and a blessing for the couple's future.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">5. Jai Mala (Exchange of Garlands) <span class="stage-anim anim-sway" style='font-size:1.3em;'>🌺</span><span class="stage-anim anim-sway" style='font-size:1.3em;margin-left:2px;'>🌼</span></div>
+      <div class="stage-title">5. Jai Mala (Exchange of Garlands)</div>
       <div class="stage-desc">The bride and groom exchange beautiful floral garlands, symbolizing their mutual acceptance and respect. This playful and lighthearted ritual often involves friends and family lifting the couple to make the exchange more fun and memorable.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">6. Vivah Havan (Sacred Fire Ritual) <span class="stage-anim anim-pulse" style='font-size:1.3em;'>🔥</span><span class="stage-anim anim-rotate" style='font-size:1.3em;margin-left:2px;'>🪔</span></div>
+      <div class="stage-title">6. Vivah Havan (Sacred Fire Ritual)</div>
       <div class="stage-desc" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
         <span>
           <svg width="48" height="60" viewBox="0 0 48 60" style="vertical-align:middle;" xmlns="http://www.w3.org/2000/svg">
@@ -276,28 +231,26 @@
       </div>
     </div>
     <div class="stage">
-      <div class="stage-title">7. Mangal Pheras (Circling the Fire) <span class="stage-anim anim-rotate" style='font-size:1.3em;'>🔄</span><span class="stage-anim anim-pulse" style='font-size:1.3em;margin-left:2px;'>🔥</span></div>
+      <div class="stage-title">7. Mangal Pheras (Circling the Fire)</div>
       <div class="stage-desc">The couple walks around the sacred fire seven times, each round (phera) representing a specific vow and aspect of married life: nourishment, strength, prosperity, family, progeny, health, and friendship. With each step, the couple promises to support and cherish each other.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">8. Saptapadi (Seven Steps) <span class="stage-anim anim-float" style='font-size:1.3em;'>👣</span><span class="stage-anim anim-pulse" style='font-size:1.3em;margin-left:2px;'>💑</span></div>
+      <div class="stage-title">8. Saptapadi (Seven Steps)</div>
       <div class="stage-desc">The Saptapadi is the most important rite, where the bride and groom take seven steps together, each step accompanied by a sacred vow. These vows cover friendship, mutual respect, health, spiritual growth, and lifelong companionship. After the seventh step, the couple is officially married in the eyes of tradition and law.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">9. Sindoor & Mangalsutra <span class="stage-anim anim-pulse" style='font-size:1.3em;'>💍</span><span class="stage-anim anim-bounce" style='font-size:1.3em;margin-left:2px;'>🔴</span></div>
+      <div class="stage-title">9. Sindoor & Mangalsutra</div>
       <div class="stage-desc">The groom applies sindoor (vermilion powder) to the bride's hair parting and ties the mangalsutra (sacred necklace) around her neck. These acts signify the bride's new status as a married woman and are symbols of love, commitment, and protection.</div>
     </div>
     <div class="stage">
-      <div class="stage-title">10. Ashirwad (Blessings) <span class="stage-anim anim-pulse" style='font-size:1.3em;'>🙏</span><span class="stage-anim anim-sway" style='font-size:1.3em;margin-left:2px;'>🌺</span></div>
+      <div class="stage-title">10. Ashirwad (Blessings)</div>
       <div class="stage-desc">The ceremony concludes with the couple seeking blessings (ashirwad) from elders, family, and friends. These blessings are for a happy, prosperous, and harmonious married life. The couple is showered with rice, flowers, and good wishes as they begin their new journey together.</div>
     </div>
   <!-- Floating Return Buttons -->
-    <a href="index.html" class="return-btn" style="position:fixed;bottom:32px;left:32px;z-index:20;background:#34a853;color:#fff;font-family:'Lora',serif;font-size:1.1rem;padding:12px 24px;border:none;border-radius:32px;box-shadow:0 2px 8px rgba(52,168,83,0.18);cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block;max-width:320px;">
-      <span style="font-size:1.3em;vertical-align:middle;margin-right:8px;">&#128269;</span> Back to Seat Lookup
-    </a>
-    <a href="schedule.html" class="return-btn" style="position:fixed;bottom:90px;left:32px;z-index:20;background:#f59e42;color:#fff;font-family:'Lora',serif;font-size:1.1rem;padding:12px 24px;border:none;border-radius:32px;box-shadow:0 2px 8px rgba(245,158,66,0.18);cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block;max-width:320px;">
-      <span style="font-size:1.3em;vertical-align:middle;margin-right:8px;">&#128197;</span> Back to Schedule
-    </a>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:40px 0 0 0;">
+      <a href="index.html" class="return-btn" style="background:#34a853;color:#fff;font-family:'Lora',serif;font-size:1.1rem;padding:12px 24px;border:none;border-radius:32px;box-shadow:0 2px 8px rgba(52,168,83,0.18);cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block;max-width:320px;">Back to Seat Lookup</a>
+      <a href="schedule.html" class="return-btn" style="background:#f59e42;color:#fff;font-family:'Lora',serif;font-size:1.1rem;padding:12px 24px;border:none;border-radius:32px;box-shadow:0 2px 8px rgba(245,158,66,0.18);cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block;max-width:320px;">Back to Schedule</a>
+    </div>
   <!-- Decorative elements for elegance -->
   <!-- (Floral garland and botanical background already added above) -->
   </div>
