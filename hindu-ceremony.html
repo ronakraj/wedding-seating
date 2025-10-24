@@ -133,31 +133,73 @@
       }
     }
     .ceremony-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+      margin-bottom: 32px;
     }
     .ceremony-card {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      background: linear-gradient(135deg, #fffbe6 0%, #e6f4ea 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(52,168,83,0.10), 0 1.5px 0 #b7e2c6;
+      padding: 32px 28px 28px 28px;
+      max-width: 340px;
+      min-width: 260px;
+      flex: 1 1 280px;
+      position: relative;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: 1.5px solid #b7e2c6;
+      margin-bottom: 0;
     }
     .ceremony-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(52,168,83,0.18), 0 2px 0 #b7e2c6;
+      z-index: 2;
     }
     .ceremony-card h2 {
-      font-size: 1.2rem;
-      color: #388e3c;
-      margin-bottom: 8px;
-      font-family: 'Lora', serif;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.35rem;
+      color: #34a853;
+      margin-bottom: 10px;
+      margin-top: 0;
+      letter-spacing: 0.5px;
     }
     .ceremony-card p {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.6;
+      font-size: 1.08rem;
+      color: #444;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .card-number {
+      position: absolute;
+      top: -22px;
+      left: 24px;
+      background: linear-gradient(135deg, #e57399 0%, #b7e2c6 100%);
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(52,168,83,0.10);
+      border: 2.5px solid #fff;
+      z-index: 3;
+    }
+    @media (max-width: 800px) {
+      .ceremony-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .ceremony-card {
+        max-width: 98vw;
+        min-width: 0;
+      }
     }
   </style>
 </head>
@@ -241,26 +283,122 @@
   <div class="container">
     <h1>Stages of a Hindu Wedding Ceremony</h1>
     <div class="ceremony-cards">
-      <div class="ceremony-card">
+      <div class="ceremony-card"><div class="card-number">1</div>
         <h2>Baraat (Groom's Procession)</h2>
         <p>The groom arrives at the wedding venue in a lively procession, often on horseback or in a decorated car, accompanied by music, dancing, and his family and friends. The Baraat is a celebration of joy and excitement, symbolizing the groom's journey to seek the bride's hand in marriage. Guests dance and sing, and the groom is welcomed by the bride's family at the entrance with a tilak (vermilion mark) and aarti (prayer ritual).</p>
       </div>
-      <div class="ceremony-card">
+      <div class="ceremony-card"><div class="card-number">2</div>
         <h2>Milni (Meeting of the Families)</h2>
         <p>The Milni is a formal meeting between the elders of both families. Garlands, gifts, and warm embraces are exchanged, signifying mutual respect and the union of two families. This ritual sets a tone of harmony and togetherness for the ceremony ahead.</p>
       </div>
-      <div class="ceremony-card">
+      <div class="ceremony-card"><div class="card-number">3</div>
         <h2>Ganesh Puja (Invocation of Lord Ganesha)</h2>
         <p>Before the main wedding rituals begin, a prayer is offered to Lord Ganesha, the remover of obstacles. This puja seeks blessings for a smooth, obstacle-free ceremony and a prosperous married life for the couple.</p>
       </div>
-      <div class="ceremony-card">
+      <div class="ceremony-card"><div class="card-number">4</div>
         <h2>Kanyadaan (Giving Away the Bride)</h2>
         <p>Kanyadaan is one of the most emotional moments, where the bride's parents formally give their daughter to the groom. The father places the bride's hand in the groom's, entrusting her happiness and well-being to him. This act is considered a sacred duty and a blessing for the couple's future.</p>
       </div>
-      <div class="ceremony-card">
+      <div class="ceremony-card"><div class="card-number">5</div>
         <h2>Jai Mala (Exchange of Garlands)</h2>
-        <p>The bride and groom exchange beautiful floral garlands
-    <div class="confetti-dot" style="left:5vw;top:0vh;width:12px;height:12px;background:#ffd700;animation-delay:0s;"></div>
+        <p>The bride and groom exchange beautiful floral garlands, symbolizing their mutual acceptance and respect. This playful and lighthearted ritual often involves friends and family lifting the couple to make the exchange more fun and memorable.</p>
+      </div>
+      <div class="ceremony-card"><div class="card-number">6</div>
+        <h2>Vivah Havan (Sacred Fire Ritual)</h2>
+        <p>A sacred fire (Agni) is lit at the center of the mandap (wedding altar). The couple makes offerings of ghee, grains, and herbs into the fire while priests chant Vedic mantras. The fire is considered a divine witness to the marriage, and its presence purifies the union.</p>
+      </div>
+      <div class="ceremony-card"><div class="card-number">7</div>
+        <h2>Mangal Pheras (Circling the Fire)</h2>
+        <p>The couple walks around the sacred fire seven times, each round (phera) representing a specific vow and aspect of married life: nourishment, strength, prosperity, family, progeny, health, and friendship. With each step, the couple promises to support and cherish each other.</p>
+      </div>
+      <div class="ceremony-card"><div class="card-number">8</div>
+        <h2>Saptapadi (Seven Steps)</h2>
+        <p>The Saptapadi is the most important rite, where the bride and groom take seven steps together, each step accompanied by a sacred vow. These vows cover friendship, mutual respect, health, spiritual growth, and lifelong companionship. After the seventh step, the couple is officially married in the eyes of tradition and law.</p>
+      </div>
+      <div class="ceremony-card"><div class="card-number">9</div>
+        <h2>Sindoor & Mangalsutra</h2>
+        <p>The groom applies sindoor (vermilion powder) to the bride's hair parting and ties the mangalsutra (sacred necklace) around her neck. These acts signify the bride's new status as a married woman and are symbols of love, commitment, and protection.</p>
+      </div>
+      <div class="ceremony-card"><div class="card-number">10</div>
+        <h2>Ashirwad (Blessings)</h2>
+        <p>The ceremony concludes with the couple seeking blessings (ashirwad) from elders, family, and friends. These blessings are for a happy, prosperous, and harmonious married life. The couple is showered with rice, flowers, and good wishes as they begin their new journey together.</p>
+      </div>
+    </div>
+    <!-- Decorative elements for elegance -->
+    <!-- (Floral garland and botanical background already added above) -->
+    <style>
+      .ceremony-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: center;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+      .ceremony-card {
+        background: linear-gradient(135deg, #fffbe6 0%, #e6f4ea 100%);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(52,168,83,0.10), 0 1.5px 0 #b7e2c6;
+        padding: 32px 28px 28px 28px;
+        max-width: 340px;
+        min-width: 260px;
+        flex: 1 1 280px;
+        position: relative;
+        transition: transform 0.18s, box-shadow 0.18s;
+        border: 1.5px solid #b7e2c6;
+        margin-bottom: 0;
+      }
+      .ceremony-card:hover {
+        transform: translateY(-6px) scale(1.025);
+        box-shadow: 0 8px 32px rgba(52,168,83,0.18), 0 2px 0 #b7e2c6;
+        z-index: 2;
+      }
+      .ceremony-card h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.35rem;
+        color: #34a853;
+        margin-bottom: 10px;
+        margin-top: 0;
+        letter-spacing: 0.5px;
+      }
+      .ceremony-card p {
+        font-size: 1.08rem;
+        color: #444;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .card-number {
+        position: absolute;
+        top: -22px;
+        left: 24px;
+        background: linear-gradient(135deg, #e57399 0%, #b7e2c6 100%);
+        color: #fff;
+        font-family: 'Lora', serif;
+        font-size: 1.25rem;
+        font-weight: bold;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(52,168,83,0.10);
+        border: 2.5px solid #fff;
+        z-index: 3;
+      }
+      @media (max-width: 800px) {
+        .ceremony-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+        .ceremony-card {
+          max-width: 98vw;
+          min-width: 0;
+        }
+      }
+    </style>
+  </div>
+  <div class="confetti-dot" style="left:5vw;top:0vh;width:12px;height:12px;background:#ffd700;animation-delay:0s;"></div>
     <div class="confetti-dot" style="left:15vw;top:0vh;width:8px;height:8px;background:#fff8dc;animation-delay:1s;"></div>
     <div class="confetti-dot" style="left:25vw;top:0vh;width:10px;height:10px;background:#ffe4b5;animation-delay:2s;"></div>
     <div class="confetti-dot" style="left:35vw;top:0vh;width:14px;height:14px;background:#ffd700;animation-delay:1.5s;"></div>
