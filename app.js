@@ -89,14 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const entry = await res.json(); // { name, table, seat?, note? }
       status.textContent = 'Found.';
-      const seatText = entry.seat !== undefined && entry.seat !== null
-        ? ` (Seat ${escapeHtml(entry.seat)})`
-        : '';
       const firstName = entry.name.split(' ')[0];
       result.innerHTML = `
         <div class="card success">
           <h2>Welcome, ${escapeHtml(firstName)}!</h2>
-          <p>Your seat: <strong>${escapeHtml(entry.table || 'TBD')}</strong>${seatText}</p>
+          <p>Your table: <strong>${escapeHtml(entry.table || 'TBD')}</strong></p>
           ${entry.note ? `<p class="note"><em>${escapeHtml(entry.note)}</em></p>` : ''}
           <p class="note"><em>Much love, Kira and Ronakraj (Kiraj)</em></p>
         </div>
